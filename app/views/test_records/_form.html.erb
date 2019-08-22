@@ -1,0 +1,62 @@
+<%= form_with(model: test_record, local: true) do |form| %>
+  <% if test_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(test_record.errors.count, "error") %> prohibited this test_record from being saved:</h2>
+
+      <ul>
+        <% test_record.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name_of_policy %>
+    <%= form.text_field :name_of_policy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :single_policy_or_group_of_policies %>
+    <%= form.text_field :single_policy_or_group_of_policies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_of_policy_instrument %>
+    <%= form.text_field :type_of_policy_instrument %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_ght_emissions_reductions_in_2020_kt_co2eq_per_year %>
+    <%= form.text_field :total_ght_emissions_reductions_in_2020_kt_co2eq_per_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :realized_net_costs %>
+    <%= form.text_field :realized_net_costs %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

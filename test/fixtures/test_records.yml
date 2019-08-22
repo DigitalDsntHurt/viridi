@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country: MyString
+  link: MyString
+  email: MyString
+  phone: MyString
+  name_of_policy: MyString
+  single_policy_or_group_of_policies: MyString
+  type_of_policy_instrument: MyString
+  total_ght_emissions_reductions_in_2020_kt_co2eq_per_year: 1.5
+  realized_net_costs: 1.5
+
+two:
+  country: MyString
+  link: MyString
+  email: MyString
+  phone: MyString
+  name_of_policy: MyString
+  single_policy_or_group_of_policies: MyString
+  type_of_policy_instrument: MyString
+  total_ght_emissions_reductions_in_2020_kt_co2eq_per_year: 1.5
+  realized_net_costs: 1.5

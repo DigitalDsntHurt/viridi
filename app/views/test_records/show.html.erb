@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @test_record.country %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @test_record.link %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @test_record.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @test_record.phone %>
+</p>
+
+<p>
+  <strong>Name of policy:</strong>
+  <%= @test_record.name_of_policy %>
+</p>
+
+<p>
+  <strong>Single policy or group of policies:</strong>
+  <%= @test_record.single_policy_or_group_of_policies %>
+</p>
+
+<p>
+  <strong>Type of policy instrument:</strong>
+  <%= @test_record.type_of_policy_instrument %>
+</p>
+
+<p>
+  <strong>Total ght emissions reductions in 2020 kt co2eq per year:</strong>
+  <%= @test_record.total_ght_emissions_reductions_in_2020_kt_co2eq_per_year %>
+</p>
+
+<p>
+  <strong>Realized net costs:</strong>
+  <%= @test_record.realized_net_costs %>
+</p>
+
+<%= link_to 'Edit', edit_test_record_path(@test_record) %> |
+<%= link_to 'Back', test_records_path %>
