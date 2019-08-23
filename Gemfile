@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem "bootstrap", ">= 4.3.1"
 gem "better_errors"
 
 # Use Active Storage variant
@@ -31,6 +31,7 @@ gem "better_errors"
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'ransack'
+gem "nokogiri", ">= 1.10.4"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
