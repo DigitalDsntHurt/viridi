@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
-
+=begin
 ##
 ## ## seed db w/ data from eea
 ##
@@ -41,8 +41,8 @@ eea_db.each{|row|
 
 Policy.create(@records)
 
-=begin
-=end
+
+
 
 ##
 ## ## seed db w/ data from iea
@@ -77,6 +77,8 @@ iea_db.each{|row|
 }
 
 Policy.create(@records)
+
+=end
 
 =begin
 
@@ -172,6 +174,7 @@ p "rails g scaffold Policies #{model_headers}"
 
 
 =begin
+=end
 ##
 ### Generate fake data
 ##
@@ -195,4 +198,8 @@ p "rails g scaffold Policies #{model_headers}"
 	end
 	@record.save
 end
-=end
+
+
+
+
+
