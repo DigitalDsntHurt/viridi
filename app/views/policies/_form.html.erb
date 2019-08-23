@@ -1,0 +1,167 @@
+<%= form_with(model: policy, local: true) do |form| %>
+  <% if policy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
+
+      <ul>
+        <% policy.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_source %>
+    <%= form.text_field :data_source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :world_region %>
+    <%= form.text_field :world_region %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_region %>
+    <%= form.text_field :country_region %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :jurisdiction %>
+    <%= form.text_field :jurisdiction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agency %>
+    <%= form.text_field :agency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_written_year %>
+    <%= form.number_field :policy_written_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_implementation_period_start_year %>
+    <%= form.number_field :policy_implementation_period_start_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_implementation_period_end_year %>
+    <%= form.number_field :policy_implementation_period_end_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_status %>
+    <%= form.text_field :policy_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_type %>
+    <%= form.text_field :policy_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_target %>
+    <%= form.text_field :policy_target %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ghgs_affected %>
+    <%= form.text_field :ghgs_affected %>
+  </div>
+
+  <div class="field">
+    <%= form.label :related_to_eu_policy_boolean %>
+    <%= form.check_box :related_to_eu_policy_boolean %>
+  </div>
+
+  <div class="field">
+    <%= form.label :related_to_eu_policy %>
+    <%= form.text_field :related_to_eu_policy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :impact_on_eu_ets_esd_or_lulucf_emissions %>
+    <%= form.text_field :impact_on_eu_ets_esd_or_lulucf_emissions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_ghg_emissions_reductions_in_2020 %>
+    <%= form.text_field :total_ghg_emissions_reductions_in_2020 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_ghg_emissions_reductions_in_2030 %>
+    <%= form.text_field :total_ghg_emissions_reductions_in_2030 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :related_to_neeap_policy_boolean %>
+    <%= form.check_box :related_to_neeap_policy_boolean %>
+  </div>
+
+  <div class="field">
+    <%= form.label :related_to_neeap_policy %>
+    <%= form.text_field :related_to_neeap_policy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :impact_evaluation %>
+    <%= form.text_field :impact_evaluation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_financing_quantity %>
+    <%= form.text_field :policy_financing_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_financing_period_start %>
+    <%= form.number_field :policy_financing_period_start %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_financing_period_end %>
+    <%= form.number_field :policy_financing_period_end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percent_private_funded %>
+    <%= form.text_field :percent_private_funded %>
+  </div>
+
+  <div class="field">
+    <%= form.label :related_documents %>
+    <%= form.text_field :related_documents %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

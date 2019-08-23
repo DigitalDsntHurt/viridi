@@ -7,6 +7,78 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
+##
+## ## seed db w/ data from eea
+##
+
+eea_db = CSV.read(Rails.root.join('db','eea_db.csv'),headers: true)
+eea_headers = eea_db.headers.sort
+
+@records = []
+eea_db.each{|row|
+	@hsh = Hash.new
+	row.each{|cell|
+		if cell[0] == "related_to_eu_policy_boolean" or cell[0] == "related_to_neeap_policy_boolean"
+			if cell[1] == "YES"
+				@hsh[cell[0].to_sym] = "TRUE"
+			else
+				@hsh[cell[0].to_sym] = "FALSE"
+			end
+		elsif cell[0] == "total_ghg_emissions_reductions_in_2020" or cell[0] == "total_ghg_emissions_reductions_in_2030" or cell[0] == "percent_private_funded"
+			if cell[1] == nil
+				
+			else
+				@hsh[cell[0].to_sym] = cell[1].to_f
+			end
+		elsif cell[0] == "policy_written_year" or cell[0] == "policy_implementation_period_start_year" or cell[0] == "policy_implementation_period_end_year" or cell[0] == "policy_financing_period_start" or cell[0] == "policy_financing_period_end"
+			@hsh[cell[0].to_sym] = cell[1].to_i
+		else	
+			@hsh[cell[0].to_sym] = cell[1]
+		end	
+	}
+	@records << @hsh
+}
+
+Policy.create(@records)
+
+=begin
+=end
+
+##
+## ## seed db w/ data from iea
+##
+
+iea_db = CSV.read(Rails.root.join('db','iea_db.csv'),headers: true)
+iea_headers = iea_db.headers.sort
+
+@records = []
+iea_db.each{|row|
+	@hsh = Hash.new
+	row.each{|cell|
+		if cell[0] == "related_to_eu_policy_boolean" or cell[0] == "related_to_neeap_policy_boolean"
+			if cell[1] == "YES"
+				@hsh[cell[0].to_sym] = "TRUE"
+			else
+				@hsh[cell[0].to_sym] = "FALSE"
+			end
+		elsif cell[0] == "total_ghg_emissions_reductions_in_2020" or cell[0] == "total_ghg_emissions_reductions_in_2030" or cell[0] == "percent_private_funded"
+			if cell[1] == nil
+				
+			else
+				@hsh[cell[0].to_sym] = cell[1].to_f
+			end
+		elsif cell[0] == "policy_written_year" or cell[0] == "policy_implementation_period_start_year" or cell[0] == "policy_implementation_period_end_year" or cell[0] == "policy_financing_period_start" or cell[0] == "policy_financing_period_end"
+			@hsh[cell[0].to_sym] = cell[1].to_i
+		else	
+			@hsh[cell[0].to_sym] = cell[1]
+		end	
+	}
+	@records << @hsh
+}
+
+Policy.create(@records)
+
+=begin
 
 ##
 ## ## check data integrity of input spreadsheets
@@ -59,7 +131,11 @@ else
 	puts "RED : there are #{iea_problems.count} iea columns that aren't included or don't match the model's headers. these are: #{iea_problems}"
 end
 
+puts ""
+puts "==="
+puts ""
 
+p "rails g scaffold Policies #{model_headers}"
 
 #eea_headers.zip(iea_headers).each{|pair|
 #	if pair[0] != pair [1]
@@ -74,11 +150,25 @@ end
 #	p row
 #}
 
+=end
 
-
-
-
-
+###### ###### 
+###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### 
+###### ###### 
 
 
 =begin
